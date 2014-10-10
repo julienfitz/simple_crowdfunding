@@ -14,7 +14,6 @@ class OrdersController < ApplicationController
 
   # GET /orders/new
   def new
-    @order = Order.new
   end
 
   # GET /orders/1/edit
@@ -25,6 +24,25 @@ class OrdersController < ApplicationController
   # POST /orders.json
   def create
     @order = Order.new(order_params)
+
+      # Amount in cents
+      @amount = @order.price
+
+      customer = Stripe::Customer.create(
+        :email => 'example@stripe.com',
+        :card  => params[:stripeToken]
+      )
+
+      charge = Stripe::Charge.create(
+        :customer    => customer.id,
+        :amount      => @amount,
+        :description => 'Rails Stripe customer',
+        :currency    => 'usd'
+      )
+
+    rescue Stripe::CardError => e
+      flash[:error] = e.message
+      redirect_to charges_path
 
     respond_to do |format|
       if @order.save
