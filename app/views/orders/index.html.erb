@@ -22,24 +22,18 @@
  <div id="backing">
     <ul>
       <li class="stats" id="backers">
-        <%= number_with_delimiter Order.backers, :delimiter => "," %>
-        <span><%= Settings.primary_stat %></span>
+        <%= number_with_delimiter Order.sponsors, :delimiter => "," %>
+        <span>sponsors</span>
       </li>
       <li class="stats">
         <%= number_to_currency Order.revenue, :precision => 0 %>
-        <span>of <%= number_to_currency Settings.project_goal.to_f, :precision => 0 %></span>
+        <span>of <%= number_to_currency 1000.to_f, :precision => 0 %></span>
       </li>
 
-      <% if Settings.expiration_date.present? %>
         <li class="stats" id="days">
-          <%= distance_of_time_in_words_to_now(Settings.expiration_date).gsub(/\D/, "") %>
-          <span><%= distance_of_time_in_words_to_now(Settings.expiration_date).gsub(/\d/, "").gsub("about", "") %> left</span>
+          <%= distance_of_time_in_words_to_now(DateTime.now + 29).gsub(/\D/, "") %>
+          <span><%= distance_of_time_in_words_to_now(DateTime.now + 29).gsub(/\d/, "").gsub("about", "") %> left</span>
         </li>
-      <% else %>
-        <li class="stats" id="days">
-            &infin;
-            <span>days left</span>
-          </li>
       <% end %>
     </ul>
     
@@ -52,16 +46,12 @@
       <div id="progress_bg">
         <div id="progress">
         </div>
-        <div id='progress_text'><%= Order.percent %>% <%= Settings.progress_text %></div>
+        <div id='progress_text'><%= Order.percent %>% sponsored</div>
       </div>
     <% end %>
     
     <div id="reserve_container">
-      <p id="ship_date"><%= Settings.ships %></p>
-      <a href="/preorder/checkout" class="blue_button reserve"><%= Settings.call_to_action %></a>
-      <p id="price"><%= Settings.price_human %></p>
-      <p><%= Settings.dont_give_them_a_reason_to_say_no %></p>
-      <%= like_button %>
+      <a href="checkout" class="blue_button reserve">Sponsor Me Now!</a>
     </div>
     
   </div>
