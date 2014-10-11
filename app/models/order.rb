@@ -2,6 +2,7 @@ class Order < ActiveRecord::Base
   before_validation :generate_uuid!, :on => :create
   belongs_to :user
   self.primary_key = 'uuid'
+  scope :completed, -> { where("token != ? OR token != ?", "", nil) }
 
   def self.goal
     1000
