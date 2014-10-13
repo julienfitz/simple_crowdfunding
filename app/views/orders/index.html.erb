@@ -41,13 +41,34 @@
         <div id='progress_text'><%= Order.percent %>% sponsored</div>
       </div>
     <% end %>
-    
+
+    <h1>My name is Liz, and I'm a RubyConf 2014 Opportunity Scholar!</h1>
+
+    <h3>This is great news! I would never have been able to afford the $400 ticket on my own. However, the scholarship does not cover air fare or accomodations, so I'm crowdfunding the rest by building this site (in Ruby, of course) and reaching out to the community.</h3>
+
+    <h4>There are three ways you can help:</h4>
+    <ul>
+      <li>Choose a sponsorship level below to help me directly</li>
+      <li>Share this page with your friends</li>
+      <li><a href="http://www.lizbaillie.com/resume2014.pdf">Hire me</a>! I'm looking for a junior dev position. <b>If I can secure a job before RubyConf, <i>I will refund every dollar I was given</i>.</b> And what's more is, I'll still make good on all my pledge promises!</li>
+    </ul>
+
+<p>
+<b>Level One: Thank You Note</b><br>
+I will mail you a hand-drawn thank you note.<br>
 <%= radio_button_tag(:sponsorship, "one") %>
-<%= label_tag(:age_child, "Sponsorship Level One: $20") %><br>
+<%= label_tag(:age_child, "Thank You Note: $20") %><br>
+</p>
+<p><b>Level Two: Flat Stanley</b><br> 
+I will mail you a hand-drawn thank you note and draw a picture of your face. While at RubyConf, I will take at least one selfie with the drawing of your face.<br>
 <%= radio_button_tag(:sponsorship, "two") %>
-<%= label_tag(:age_adult, "Sponsorship Level Two: $50") %><br>
+<%= label_tag(:age_adult, "Flat Stanley: $50") %><br>
+</p>
+<p><b>Level Three: Flat Stanley PLUS!</b><br>
+Everything above, PLUS I will mail you the original drawing of your face.<br>
 <%= radio_button_tag(:sponsorship, "three") %>
-<%= label_tag(:age_adult, "Sponsorship Level Three: $100") %><br>
+<%= label_tag(:age_adult, "Flat Stanley PLUS: $100") %><br>
+</p>
 <%= radio_button_tag(:sponsorship, "four") %>
 <%= label_tag(:age_adult, "Sponsorship Level Four: $300") %><br>
 <%= radio_button_tag(:sponsorship, "five") %>
