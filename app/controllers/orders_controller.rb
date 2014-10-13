@@ -5,7 +5,7 @@ class OrdersController < ApplicationController
   end
 
   def checkout
-    
+    @sponsors = Order.all.count
   end
 
   def create
