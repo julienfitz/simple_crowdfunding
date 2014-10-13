@@ -2,7 +2,7 @@ TODO
 ====
 
 * add video_placeholder.png to assets
-* have "sponsor me now" link go somewhere
+* ~~have "sponsor me now" link go somewhere~~
 * implement checkout with Stripe
 * add options/rewards for different payment levels w/ radio buttons
 * include one "pay what you want" level

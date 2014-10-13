@@ -28,17 +28,8 @@ class OrdersController < ApplicationController
 
     rescue Stripe::CardError => e
       flash[:error] = e.message
-      redirect_to charges_path
+      redirect_to root_path
 
-    respond_to do |format|
-      if @order.save
-        format.html { redirect_to @order, notice: 'Order was successfully created.' }
-        format.json { render :show, status: :created, location: @order }
-      else
-        format.html { render :new }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
   private

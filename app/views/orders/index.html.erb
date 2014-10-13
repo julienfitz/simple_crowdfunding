@@ -42,8 +42,20 @@
       </div>
     <% end %>
     
-    <div id="reserve_container">
+<%= radio_button_tag(:sponsorship, "one") %>
+<%= label_tag(:age_child, "Sponsorship Level One: $20") %><br>
+<%= radio_button_tag(:sponsorship, "two") %>
+<%= label_tag(:age_adult, "Sponsorship Level Two: $50") %><br>
+<%= radio_button_tag(:sponsorship, "three") %>
+<%= label_tag(:age_adult, "Sponsorship Level Three: $100") %><br>
+<%= radio_button_tag(:sponsorship, "four") %>
+<%= label_tag(:age_adult, "Sponsorship Level Four: $300") %><br>
+<%= radio_button_tag(:sponsorship, "five") %>
+<%= label_tag(:age_adult, "Sponsorship Level Five: $500") %><br>
+<%= submit_tag(value="Sponsor Me Now!") %>
+
+<!--     <div id="reserve_container">
       <a href="checkout" class="blue_button reserve">Sponsor Me Now!</a>
-    </div>
+    </div> -->
     
   </div>
