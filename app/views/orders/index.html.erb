@@ -57,23 +57,23 @@
 <b>Level One: Thank You Note</b><br>
 I will mail you a hand-drawn thank you note.<br>
 <%= radio_button_tag(:sponsorship, "one") %>
-<%= label_tag(:age_child, "Thank You Note: $20") %><br>
+<%= label_tag(:level_one, "Thank You Note: $20") %><br>
 </p>
 <p><b>Level Two: Flat Stanley</b><br> 
-I will mail you a hand-drawn thank you note and draw a picture of your face. While at RubyConf, I will take at least one selfie with the drawing of your face.<br>
+I will mail you a hand-drawn thank you note and draw a picture of your face. While at RubyConf, I will take at least one selfie with the drawing of your face, <a href="http://en.wikipedia.org/wiki/Flat_Stanley#The_Flat_Stanley_Project">Flat Stanley style</a>.<br>
 <%= radio_button_tag(:sponsorship, "two") %>
-<%= label_tag(:age_adult, "Flat Stanley: $50") %><br>
+<%= label_tag(:level_two, "Flat Stanley: $50") %><br>
 </p>
 <p><b>Level Three: Flat Stanley PLUS!</b><br>
 Everything above, PLUS I will mail you the original drawing of your face.<br>
 <%= radio_button_tag(:sponsorship, "three") %>
-<%= label_tag(:age_adult, "Flat Stanley PLUS: $100") %><br>
+<%= label_tag(:level_three, "Flat Stanley PLUS: $100") %><br>
 </p>
+<p><b>Level Four: Name Your Own Price!</b><br>
+Give more, give less, give what you want! If your chosen amount is greater than any of the other sponsorship levels, you'll receive everything included in the highest applicable sponsorship level.<br>
 <%= radio_button_tag(:sponsorship, "four") %>
-<%= label_tag(:age_adult, "Sponsorship Level Four: $300") %><br>
-<%= radio_button_tag(:sponsorship, "five") %>
-<%= label_tag(:age_adult, "Sponsorship Level Five: $500") %><br>
-<%= submit_tag(value="Sponsor Me Now!") %>
+<%= label_tag(:level_four, "Sponsorship Level Four: Name Your Price!") %><br>
+</p>
 
 <!--     <div id="reserve_container">
       <a href="checkout" class="blue_button reserve">Sponsor Me Now!</a>
