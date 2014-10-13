@@ -2,6 +2,7 @@ class OrdersController < ApplicationController
 
   def index
     @orders = Order.all
+    @order = Order.find_or_create_by(params[:email])
   end
 
   def checkout
@@ -9,7 +10,7 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @order = Order.new(order_params)
+    @order = Order.find_or_create_by(params[:email])
 
       # Amount in cents
       @amount = @order.price
