@@ -1,14 +1,8 @@
 class Order < ActiveRecord::Base
-  include Payola::Sellable
-  attr_reader :price, :permalink, :name
   before_validation :generate_uuid!, :on => :create
   belongs_to :user
   self.primary_key = 'uuid'
   scope :completed, -> { where("token != ? OR token != ?", "", nil) }
-
-  def redirect_path(sale)
-    '/complete'
-  end
 
   def self.goal
     1000
