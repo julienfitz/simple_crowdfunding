@@ -1,0 +1,45 @@
+<%
+  button_class = local_assigns.fetch :button_class, "stripe-button-el"
+  button_inner_style = local_assigns.fetch :button_inner_style, 'min-height: 30px'
+  button_text = local_assigns.fetch :button_text, "Pay Now"
+  description = local_assigns.fetch :description, "#{sale.product.name} (#{formatted_price(sale.product.price)})"
+  name = local_assigns.fetch :name, sale.product.name
+  product_image_path = local_assigns.fetch :product_image_path , ''
+  panel_label = local_assigns.fetch :panel_label, ''
+  allow_remember_me = local_assigns.fetch :allow_remember_me, true
+  email = local_assigns.fetch :email, ''
+  verify_zip_code = local_assigns.fetch :verify_zip_code, false
+
+  button_id = "payola-button-#{sale.product.product_class}-#{sale.product.permalink}"
+  error_div_id = "#{button_id}-errors"
+  form_id = "#{button_id}-form"
+%>
+
+<script src="https://checkout.stripe.com/checkout.js"></script>
+<link rel="stylesheet" href="https://checkout.stripe.com/v3/checkout/button.css"></link>
+
+<%= form_tag payola.buy_path(product_class: sale.product.product_class, permalink: sale.product.permalink), id: form_id do %>
+  <button class="<%= button_class %> payola-checkout-button" id="<%= button_id %>">
+    <span class="payola-checkout-button-text" style="display: block; <%= button_inner_style %>"><%= button_text %></span>
+    <span class="payola-checkout-button-spinner" style="display: none; <%= button_inner_style %>">Please wait...</span>
+  </button>
+  <div style="display:none", id="<%= error_div_id %>"></div>
+<% end %>
+<script type="text/javascript">
+  Payola.setUpStripeCheckoutButton({
+    form_id: "<%= form_id %>",
+    button_id: "<%= button_id %>",
+    error_div_id: "<%= error_div_id %>",
+    product_class: "<%= sale.product.product_class %>",
+    product_permalink: "<%= sale.product.permalink %>",
+    price: <%= sale.product.price %>,
+    name: "<%= name %>",
+    description: "<%= description %>",
+    product_image_path: "<%= product_image_path %>",
+    publishable_key: "<%= Payola.publishable_key %>",
+    panel_label: "<%= panel_label %>",
+    allow_remember_me: <%= allow_remember_me %>,
+    email: "<%= email %>",
+    verify_zip_code: <%= verify_zip_code %>
+  });
+</script>
