@@ -74,15 +74,3 @@ Give more, give less, give what you want! If your chosen amount is greater than 
 <%#= radio_button_tag(:sponsorship, "four") %>
 <%#= label_tag(:level_four, "Sponsorship Level Four: Name Your Price!") %><br>
 </p>
-
-<%= form_for(@order) do |f| %>
-  <%= f.radio_button :level_one %>
-  <%= f.label :level_one, "Level One: Thank You Note" %>
-  <%= f.radio_button :level_two %>
-  <%= f.label :level_two, "Level Two: Flat Stanley"%>
-  <%= f.radio_button :level_three %>
-  <%= f.label :level_three, "Level Three: Flat Stanley PLUS"%>
-  <%= f.text_field :level_four %>
-  <%= f.label :level_four, "Level Four: Name Your Own Price!"%>
-  <%= f.submit %>
-<% end %>

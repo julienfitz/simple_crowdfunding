@@ -1,4 +1,5 @@
 class Order < ActiveRecord::Base
+  include Payola::Sellable
   before_validation :generate_uuid!, :on => :create
   belongs_to :user
   self.primary_key = 'uuid'
