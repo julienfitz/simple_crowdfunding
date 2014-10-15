@@ -10,3 +10,4 @@ TODO
 * add progress bar
 * create video
 * make last radio button include a text area to fill in your own sponsorship level
+* WRITE TESTS

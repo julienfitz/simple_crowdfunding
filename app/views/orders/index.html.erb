@@ -74,3 +74,5 @@ Give more, give less, give what you want! If your chosen amount is greater than 
 <%#= radio_button_tag(:sponsorship, "four") %>
 <%#= label_tag(:level_four, "Sponsorship Level Four: Name Your Price!") %><br>
 </p>
+
+<%= render 'payola/transactions/checkout', sale: Sale.new(product: Order.first) %>
