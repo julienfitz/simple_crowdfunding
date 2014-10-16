@@ -1,6 +1,6 @@
 class Order < ActiveRecord::Base
   before_validation :generate_uuid!, :on => :create
-  belongs_to :user
+  belongs_to :item
   self.primary_key = 'uuid'
   scope :completed, -> { where("token != ? OR token != ?", "", nil) }
 
