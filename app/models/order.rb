@@ -1,8 +1,27 @@
 class Order < ActiveRecord::Base
+  attr_accessor :stripe_email, :stripe_token
   before_validation :generate_uuid!, :on => :create
   belongs_to :item
+  has_one :stripe_payment
   self.primary_key = 'uuid'
   scope :completed, -> { where("token != ? OR token != ?", "", nil) }
+
+  def process_payment(payment_processor = StripePayment.new)
+    self.stripe_payment = payment_processor
+    if self.stripe_payment.process(stripe_email, stripe_token, cart.total)
+      true
+    else
+      false
+    end
+  end
+
+  def process_and_save!
+    if self.process_payment
+      self.save
+    else
+      false
+    end
+  end
 
   def self.goal
     1000
