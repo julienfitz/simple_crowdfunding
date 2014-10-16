@@ -4,6 +4,7 @@ class OrdersController < ApplicationController
   end
 
   def checkout
+    @items = Item.all
     @order = Order.create(params[:level_num])
 
     respond_to do |format|

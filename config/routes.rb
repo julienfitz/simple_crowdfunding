@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   resources :orders
   resources :users
-  root :to => 'orders#index'
+  root :to => 'items#index'
 
   get 'complete' => 'orders#complete'
 
