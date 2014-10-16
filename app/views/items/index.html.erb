@@ -55,8 +55,8 @@
 
 <% @items.each do |item| %>
   <p>
-    <%= item.name %><br>
-    <%= item.price %><br>
+    <b><%= item.name %><br></b>
+    $<%= item.price %><br>
     <%= item.description %><br>
   </p>
 <% end %>
