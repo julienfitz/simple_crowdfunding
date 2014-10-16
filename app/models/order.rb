@@ -1,9 +1,7 @@
 class Order < ActiveRecord::Base
   attr_accessor :stripe_email, :stripe_token
-  before_validation :generate_uuid!, :on => :create
   belongs_to :item
   has_one :stripe_payment
-  self.primary_key = 'uuid'
   scope :completed, -> { where("token != ? OR token != ?", "", nil) }
 
   def process_payment(payment_processor = StripePayment.new)
@@ -46,13 +44,5 @@ class Order < ActiveRecord::Base
       1
     end
   end
-
-  def generate_uuid!
-    begin
-      self.uuid = SecureRandom.hex(16)
-    end while Order.find_by(:uuid => self.uuid).present?
-  end
-
-  validates_presence_of :name, :price, :user_id
 
 end

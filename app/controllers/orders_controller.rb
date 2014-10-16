@@ -1,11 +1,16 @@
 class OrdersController < ApplicationController
 
-  def show
-  end
+  # def show
+  # end
 
   def checkout
     @items = Item.all
-    @order = Order.create(params[:level_num])
+    @order = Order.new(
+      order_id: order.id,
+      total: order.total,
+      stripe_email: stripe_email,
+      stripe_token: stripe_token
+      )
 
     respond_to do |format|
       format.html { redirect_to order_path(@order), notice: 'Thanks for your order! Please email me at liz@lizbaillie.com if you have any questions or concerns.' }
