@@ -1,6 +1,6 @@
 class Order < ActiveRecord::Base
-  before_filter :set_order, only: [:show]
-  has_many :items
+  #before_filter :set_order, only: [:show]
+  has_many :items, foreign_key: "item_id"
 
   def total
     @orders = Order.all

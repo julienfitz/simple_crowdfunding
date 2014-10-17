@@ -13,6 +13,24 @@ class OrdersController < ApplicationController
   end
 
   def create
+    @amount = @order.item_id.item_price
+
+    customer = Stripe::Customer.create(
+      :email => 'example@stripe.com',
+      :card  => params[:stripeToken]
+    )
+
+    charge = Stripe::Charge.create(
+      :customer    => customer.id,
+      :amount      => @amount,
+      :description => 'Rails Stripe customer',
+      :currency    => 'usd'
+    )
+
+  rescue Stripe::CardError => e
+    flash[:error] = e.message
+    redirect_to charges_path
+
     @order = Order.new(order_params)
 
     respond_to do |format|
