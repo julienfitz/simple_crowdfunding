@@ -10,9 +10,15 @@ class OrdersController < ApplicationController
   # GET /orders/1
   # GET /orders/1.json
   def show
+    @order = Order.find(params[:id])
   end
 
   def create
+    @order = Order.new(
+      name:
+      item_id:
+      email:
+      )
     @amount = @order.item_id.item_price
 
     customer = Stripe::Customer.create(
@@ -30,8 +36,6 @@ class OrdersController < ApplicationController
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to charges_path
-
-    @order = Order.new(order_params)
 
     respond_to do |format|
       if @order.save
