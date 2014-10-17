@@ -1,14 +1,10 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_item, only: [:show]
 
   # GET /items
   # GET /items.json
   def index
     @items = Item.all
-  end
-
-  def create
-    @item = Item.new(item_params)
   end
 
   private
