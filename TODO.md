@@ -1,13 +1,11 @@
 TODO
 ====
 
-* add video_placeholder.png to assets
-* create working submit button on main page that leads to checkout page
-* implement checkout with Stripe
-* ~~add options/rewards for different payment levels w/ radio buttons~~
-* ~~include one "pay what you want" level~~
+* create working submit buttons on main page that leads to checkout page
+* implement checkout with Stripe (maybe each level has its own button?)
+* ~~add options/rewards for different payment levels~~
 * ~~add description of project~~
-* add progress bar
+* add progress bar or show percentage of project sponsored
 * create video
-* make last radio button include a text area to fill in your own sponsorship level
 * WRITE TESTS
+* boostrap the heck outta this ugly thing
