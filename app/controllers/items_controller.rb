@@ -7,17 +7,9 @@ class ItemsController < ApplicationController
     @items = Item.all
   end
 
-  # GET /items/1
-  # GET /items/1.json
-  def show
+  def create
+    @item = Item.new(item_params)
   end
-
-  # POST /items
-  # POST /items.json
-  # def create
-  #   @item = Item.new(item_params)
-  # end
-
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -27,6 +19,6 @@ class ItemsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
-      params.require(:item).permit(:name, :price, :description)
+      params.require(:item).permit(:item_name, :item_descrip, :item_price)
     end
 end

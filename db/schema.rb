@@ -11,38 +11,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141016181429) do
+ActiveRecord::Schema.define(version: 20141017004526) do
 
   create_table "items", force: true do |t|
-    t.string   "name"
-    t.integer  "price"
-    t.string   "description"
+    t.string   "item_name"
+    t.string   "item_descrip"
+    t.integer  "item_price"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "orders", force: true do |t|
-    t.string   "token"
-    t.string   "transaction_id"
-    t.string   "address_one"
-    t.string   "address_two"
-    t.string   "city"
-    t.string   "state"
-    t.string   "zip"
-    t.string   "country"
-    t.string   "status"
-    t.string   "number"
-    t.string   "uuid"
-    t.string   "user_id"
-    t.decimal  "price"
-    t.string   "phone"
-    t.string   "name"
+    t.integer  "item_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|
-    t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
