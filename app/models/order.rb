@@ -1,6 +1,5 @@
 class Order < ActiveRecord::Base
   before_filter :set_order, only: [:show]
-  has_one :user
   has_many :items
 
   def total

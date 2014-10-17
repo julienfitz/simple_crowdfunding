@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   resources :items
 
   resources :orders
-  resources :users
   root :to => 'items#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

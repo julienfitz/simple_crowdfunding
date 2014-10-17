@@ -4,8 +4,6 @@ class CreateItems < ActiveRecord::Migration
       t.string :item_name
       t.string :item_descrip
       t.integer :item_price
-
-      t.timestamps
     end
   end
 end

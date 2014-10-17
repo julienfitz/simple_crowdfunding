@@ -6,7 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-sponsorships = Item.create([{ 
+Item.create([{ 
     item_name: 'Level One: Thank You Note', 
     item_price: 20, 
     item_descrip: 'I will mail you a hand-drawn thank you note.'
