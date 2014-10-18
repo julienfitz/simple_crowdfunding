@@ -1,10 +1,15 @@
+<div class="top">
 <h1>Send Liz to RubyConf!</h1>
 <%= image_tag('me_with_dogs.jpg') %>
+</div>
 
+<div class="part_one">
     <h2>My name is Liz, and I'm a RubyConf 2014 Opportunity Scholar!</h2>
 
     <h3>This is great news! I would never have been able to afford the $400 entry fee on my own. However, the scholarship does not cover air fare or accomodations, so I'm crowdfunding the rest by building this site (in Ruby, of course) and reaching out to the community.</h3>
+</div>
 
+<div class="part_two">
     <p>
       <b>A little about me:</b> in my previous life, I was a published cartoonist and illustrator with <a href="http://www.amazon.com/Liz-Baillie/e/B00JBZPCLM/ref=sr_tc_2_0?qid=1413508895&sr=1-2-ent">several books</a> and a <a href="http://www.freewheelcomics.com">webcomic</a> under my belt (I even have a bachelor's degree in comics and a <a href="http://en.wikipedia.org/wiki/Liz_Baillie">Wikipedia page</a>). After hitting some hard times, I went back to school to explore a more stable career path. I always loved science and math, and ended up stumbling upon a CompSci 101 class where I absolutely fell in love with programming!<br><br>
 
@@ -19,7 +24,9 @@
       <li>Share this page with your friends</li>
       <li><b><a href="http://www.lizbaillie.com/resume2014.pdf">Hire me</a></b>! I'm looking for a junior dev position. <b>If I can secure a job before RubyConf, <i>I will refund every dollar I was given</i>.</b> And what's more is, I'll still make good on all my pledge promises!</li>
     </ul>
+</div>
 
+<div class="part_three">
 <% @items.each do |item| %>
   <p>
     <b><%= item.item_name %><br></b>
@@ -29,3 +36,5 @@
 <% end %>
 
 <%= render 'orders/form' %>
+
+</div>
