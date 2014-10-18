@@ -24,16 +24,36 @@ p {
 
 .top {
   background-color: white;
+  border: 4px solid;
+  margin: 20px;
+  padding: 5px 5px;
+  border-radius: 25px;
+  border-color: #680000;
 }
 
 .part_one {
   background-color: white;
+  border: 4px solid;
+  margin: 20px;
+  padding: 5px 5px;
+  border-radius: 25px;
+  border-color: #680000;
 }
 
 .part_two {
   background-color: white;
+  border: 4px solid;
+  margin: 20px;
+  padding: 5px 5px;
+  border-radius: 25px;
+  border-color: #680000;
 }
 
 .part_three {
   background-color: white;
+  border: 4px solid;
+  margin: 20px;
+  padding: 5px 5px;
+  border-radius: 25px;
+  border-color: #680000;
 }
