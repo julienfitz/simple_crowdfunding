@@ -1,0 +1,6 @@
+body {
+  background: url("ruby_bg.jpg");
+  background-size: 4%;
+  background-repeat: repeat;
+  background-attachment:fixed;
+}
