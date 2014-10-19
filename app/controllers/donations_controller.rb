@@ -3,6 +3,7 @@ class DonationsController < ApplicationController
 
   def index
     @donations = Donation.all
+    @charge = Charges.new
   end
 
 
@@ -11,16 +12,6 @@ class DonationsController < ApplicationController
 
   def create
     @donation = Donation.new(donation_params)
-
-    respond_to do |format|
-      if @donation.save
-        format.html { redirect_to @donation, notice: 'Donation was successfully created.' }
-        format.json { render :show, status: :created, location: @donation }
-      else
-        format.html { render :new }
-        format.json { render json: @donation.errors, status: :unprocessable_entity }
-      end
-    end
   end
 
 
@@ -32,6 +23,6 @@ class DonationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def donation_params
-      params.require(:donation).permit(:name, :email, :level, :price, :level_descrip)
+      params.require(:donation).permit(:level, :price, :level_descrip)
     end
 end
