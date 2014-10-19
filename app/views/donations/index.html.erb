@@ -1,4 +1,3 @@
-
 <div class="top">
   <h1>Send Liz to RubyConf!</h1>
   <%= image_tag('me_with_dogs.jpg') %>
@@ -37,14 +36,13 @@
 
 <div class="part_three">
   <h1>Sponsorship Levels</h1>
-<% @items.each do |item| %>
+<% @donations.each do |donation| %>
   <p>
-    <b><%= item.item_name %><br></b>
-    Price: $<%= item.item_price %><br>
-    <%= item.item_descrip %><br>
+    <b><%= donation.level %><br></b>
+    Price: $<%= donation.price %><br>
+    <%= donation.level_descrip %><br>
   </p>
 <% end %>
 
-<%= render 'orders/form' %>
-
-</div>
+<!-- put dropdown menu here with Stripe button
+ --></div>
