@@ -45,7 +45,17 @@
   </p>
 <% end %>
 
-<%= link_to image_tag('button.jpg'), new_charge_path %>
+<%= form_for @charge, url: charges_path do |f| %>
+  <%= f.select(:donation_id, Charges.levels_for_dropdown) %>
+
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="RubyConf Sponsorship"
+          data-amount="<%= @amount %>"></script>
+<% end %>
+
+<%#= link_to image_tag('button.jpg'), new_charge_path %>
 
 
 </div>
