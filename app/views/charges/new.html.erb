@@ -5,5 +5,5 @@
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="RubyConf Sponsorship"
-          data-amount=<%= "#{}" %>></script>
+          data-amount="<%= @amount %>"></script>
 <% end %>
