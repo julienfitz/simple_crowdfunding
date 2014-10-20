@@ -3,7 +3,7 @@
   <h1>Send Liz to RubyConf!</h1>
   <%= image_tag('me_with_dogs.jpg') %><br>
   <h2>$<%= Charges.total_donations %> / $1000 raised</h2>
-  <h2> 20 days left </h2>
+  <h2> <%= Donation.days_left %> days left </h2>
 </div>
 
 <div class="part_one">
