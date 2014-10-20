@@ -10,23 +10,15 @@
   <div class="title_font">
     <h2>My name is Liz, and I'm a RubyConf 2014 Opportunity Scholar!</h2>
   </div>
+  <p>
+    This is great news! I would never have been able to afford the $400 entry fee on my own. However, the scholarship does not cover air fare or accomodations, so I'm crowdfunding the rest by building this site (in Ruby, of course) and reaching out to the community.
+    
+    In my previous life, I was a published cartoonist and illustrator with <a href="http://www.amazon.com/Liz-Baillie/e/B00JBZPCLM/ref=sr_tc_2_0?qid=1413508895&sr=1-2-ent">several books</a> and a <a href="http://www.freewheelcomics.com">webcomic</a> under my belt (I even have a bachelor's degree in comics and a <a href="http://en.wikipedia.org/wiki/Liz_Baillie">Wikipedia page</a>). After hitting some hard times, I went back to school to explore a more stable career path. I always loved science and math, and ended up stumbling upon a CompSci 101 class where I absolutely fell in love with programming!<br><br>
 
-    <h3>This is great news! I would never have been able to afford the $400 entry fee on my own. However, the scholarship does not cover air fare or accomodations, so I'm crowdfunding the rest by building this site (in Ruby, of course) and reaching out to the community.</h3>
-</div>
+    Shortly after, I discovered the <a href="http://www.flatironschool.com">Flatiron School</a> here in NYC and spent the entirety of this past summer using nearly every waking hour I had to study web development (specifically, Ruby and Rails with just a touch of JavaScript). I graduated at the end of August and have since spent most of my time going on job interviews, working on <a href="http://www.github.com/lizzerdrix">side projects</a>, going over tutorials, and networking at meetups. <br><br>
 
-<div class="part_two">
-  <div class="title_font">
-    <h2>
-      About Me<br>
-    </h2>
-  </div>
-    <p>
-      In my previous life, I was a published cartoonist and illustrator with <a href="http://www.amazon.com/Liz-Baillie/e/B00JBZPCLM/ref=sr_tc_2_0?qid=1413508895&sr=1-2-ent">several books</a> and a <a href="http://www.freewheelcomics.com">webcomic</a> under my belt (I even have a bachelor's degree in comics and a <a href="http://en.wikipedia.org/wiki/Liz_Baillie">Wikipedia page</a>). After hitting some hard times, I went back to school to explore a more stable career path. I always loved science and math, and ended up stumbling upon a CompSci 101 class where I absolutely fell in love with programming!<br><br>
-
-      Shortly after, I discovered the <a href="http://www.flatironschool.com">Flatiron School</a> here in NYC and spent the entirety of this past summer using nearly every waking hour I had to study web development (specifically, Ruby and Rails with just a touch of JavaScript). I graduated at the end of August and have since spent most of my time going on job interviews, working on <a href="http://www.github.com/lizzerdrix">side projects</a>, going over tutorials, and networking at meetups. <br><br>
-
-      <b>I'm doing everything I can to obtain a full-time developer position, but I'm not there yet. I know that attending RubyConf as an Opportunity Scholar will push me substantially closer to that goal. </b>
-    </p>
+    <b>I'm doing everything I can to obtain a full-time developer position, but I'm not there yet. I know that attending RubyConf as an Opportunity Scholar will push me substantially closer to that goal. </b>
+  </p>
   <div class="how_to_help">
     <h4>There are three ways you can help:</h4>
     <ul>
@@ -37,11 +29,11 @@
   </div>
 </div>
 
-<div class="part_three">
-  <h1>Sponsorship Levels</h1>
+<div class="part_two">
+  <h1>Sponsorship Levels</h1><br>
 <% @donations.each do |donation| %>
   <p>
-    <b><%= donation.level %><br></b>
+    <b><%= donation.level %><br><br></b>
     Price: $<%= donation.price %><br>
     <%= donation.level_descrip %><br>
   </p>
