@@ -1,7 +1,9 @@
 
 <div class="top">
   <h1>Send Liz to RubyConf!</h1>
-  <%= image_tag('me_with_dogs.jpg') %>
+  <%= image_tag('me_with_dogs.jpg') %><br>
+  <h2>$<%= Charges.total_donations %> / $1000 raised</h2>
+  <h2> 20 days left </h2>
 </div>
 
 <div class="part_one">
@@ -48,14 +50,10 @@
 <%= form_for @charge, url: charges_path do |f| %>
   <%= f.select(:donation_id, Charges.levels_for_dropdown) %>
 
-
   <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
           data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
           data-description="RubyConf Sponsorship"
           data-amount="<%= @amount %>"></script>
 <% end %>
-
-<%#= link_to image_tag('button.jpg'), new_charge_path %>
-
 
 </div>

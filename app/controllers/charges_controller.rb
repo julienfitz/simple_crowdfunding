@@ -16,7 +16,7 @@ class ChargesController < ApplicationController
     charge = Stripe::Charge.create(
       :customer    => customer.id,
       :amount      => @amount.price * 100,
-      :description => 'Rails Stripe customer',
+      :description => 'RubyConf Sponsorship',
       :currency    => 'usd'
     )
 

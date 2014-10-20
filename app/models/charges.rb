@@ -8,4 +8,13 @@ class Charges < ActiveRecord::Base
     end
   end
 
+  def self.total_donations
+    @all_charges = Stripe::Charge.all
+    total_amount = 0
+    @donations_array = @all_charges.map do |thing|
+      total_amount += thing['amount']
+    end
+    @total_donations = total_amount/100
+  end
+
 end

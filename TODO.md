@@ -12,3 +12,4 @@ TODO
 * ~~make it so when "sponsor me" button is clicked, a modal pops up to enter the info, which then leads to an 'order complete' page~~
 * figure out why checkout page isn't responding to css
 * implement some kind of mailer to send auto mailer on order completion
+* figure out how to collect how much money has been raised so far to put on front page
